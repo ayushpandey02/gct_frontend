@@ -270,9 +270,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if (registrationForm) {
             registrationForm.addEventListener('submit', async (e) => {
                 e.preventDefault();
-                const btn = document.getElementById('submitBtn');
-                btn.classList.add('disabled')
-
                 if (validateStep(currentStep)) {
                     try {
                         showLoading();
@@ -306,6 +303,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             throw new Error(result.error);
                         }
                         alert('Registration successful!');
+                        window.location.href = 'success.html';
                         
                     } catch (error) {
                         hideLoading();
